@@ -1,6 +1,5 @@
 module ForemanAgentMonitoring
   class Engine < ::Rails::Engine
-    isolate_namespace ForemanAgentMonitoring
     engine_name 'foreman_agent_monitoring'
 
     config.autoload_paths += Dir["#{config.root}/app/controllers/concerns"]
@@ -27,9 +26,7 @@ module ForemanAgentMonitoring
 
         # Add permissions
         security_block :foreman_agent_monitoring do
-          permission :view_foreman_agent_monitoring, {
-            :agents => %i[index auto_complete_search]
-          }, resource_type: 'AgentMonitoring'
+          permission :view_foreman_agent_monitoring, {:agents => %i[index auto_complete_search]}
         end
 
         # Add a new role called 'ForemanAgentMonitoring' if it doesn't exist
