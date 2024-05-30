@@ -2,7 +2,7 @@ require File.expand_path('lib/foreman_agent_monitoring/version', __dir__)
 
 Gem::Specification.new do |s|
   s.name        = 'foreman_agent_monitoring'
-  s.version     = ForemanPluginTemplate::VERSION
+  s.version     = ForemanAgentMonitoring::VERSION
   s.metadata    = { 'is_foreman_plugin' => 'true' }
   s.license     = 'GPL-3.0'
   s.authors     = ['Louis Tiches']
