@@ -28,7 +28,7 @@ module ForemanAgentMonitoring
         # Add permissions
         security_block :foreman_agent_monitoring do
           permission :view_foreman_agent_monitoring, {
-            :'foreman_agent_monitoring/agents' => %i[index auto_complete_search]
+            :agents => %i[index auto_complete_search]
           }, resource_type: 'AgentMonitoring'
         end
 
