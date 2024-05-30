@@ -37,7 +37,7 @@ module ForemanAgentMonitoring
 
         # Add menu entry
         sub_menu :top_menu, :hallas_automation, caption: N_('Hallas Automation'), icon: 'pficon pficon-enterprise', after: :hosts_menu do
-          menu :top_menu, :agents, caption: N_('Agents'), url_hash: { :controller => :agents, :action => :index }
+          menu :top_menu, :agents, caption: N_('Agents'), url_hash: { controller: 'foreman_agent_monitoring/agents', action: :index }
         end
 
         # Add dashboard widget
