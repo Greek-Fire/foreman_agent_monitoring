@@ -26,7 +26,7 @@ module ForemanAgentMonitoring
 
         # Add permissions
         security_block :foreman_agent_monitoring do
-          permission :view_foreman_agent_monitoring, {:agents => %i[index auto_complete_search]}
+          permission :view_foreman_agent_monitoring, { :agents => %i[index auto_complete_search] }
         end
 
         # Add a new role called 'ForemanAgentMonitoring' if it doesn't exist
