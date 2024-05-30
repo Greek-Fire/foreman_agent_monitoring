@@ -1,6 +1,8 @@
-class AgentsController < ApplicationController
-  include Foreman::Controller::AutoCompleteSearch
-  def index
-    @agents = resource_base_search_and_page
+module ForemanAgentMonitoring
+  class Agent < ApplicationRecord
+    scoped_search on: :network, complete_value: true
+    scoped_search on: :status, complete_value: true
+    scoped_search on: :agent, complete_value: true
+    scoped_search on: :host
   end
 end
