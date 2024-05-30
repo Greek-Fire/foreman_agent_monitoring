@@ -25,21 +25,21 @@ module ForemanAgentMonitoring
 
         # Add permissions
         security_block :foreman_agent_monitoring do
-          permission :view_foreman_agent_monitoring, { :'foreman_agent_monitoring/example' => [:new_action],
-                                                      :'react' => [:index] }
+          permission :view_foreman_agent_monitoring, { :'foreman_agent_monitoring' => %i[index auto_complete_search],
+                                                      :'react' => [:index] },
+                                                      :resource_type => 'AgentMonitoring'
         end
 
         # Add a new role called 'Discovery' if it doesn't exist
         role 'ForemanAgentMonitoring', [:view_foreman_agent_monitoring]
 
         # add menu entry
-        sub_menu :top_menu, :plugin_template, icon: 'pficon pficon-enterprise', caption: N_('Plugin Template'), after: :hosts_menu do
-          menu :top_menu, :welcome, caption: N_('Welcome Page'), engine: ForemanAgentMonitoring::Engine
-          menu :top_menu, :new_action, caption: N_('New Action'), engine: ForemanAgentMonitoring::Engine
+        sub_menu :top_menu, :hallas_automation, caption: N_('Hallas Automation'), icon: 'pficon pficon-enterprise', after: :hosts_menu do
+          menu :top_menu, :agents, caption: N_('Agents'), url_hash: { :controller => :agents, :action => :index }
         end
 
         # add dashboard widget
-        widget 'foreman_agent_monitoring_widget', name: N_('Foreman plugin template widget'), sizex: 4, sizey: 1
+        # widget 'foreman_agent_monitoring_widget', name: N_('Foreman plugin template widget'), sizex: 4, sizey: 1
       end
     end
 
