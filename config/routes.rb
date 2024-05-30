@@ -1,12 +1,12 @@
-
-Rails.application.routes.draw do
+ForemanAgentMonitoring::Engine.routes.draw do
   resources :agents do
+    get :results, on: :collection
     get :auto_complete_search, on: :collection
   end
-  
-  namespace :api do
-    namespace :v2 do
-      resources :agents
-    end
-  end
+
+  root to: 'agents#index'
+end
+
+Foreman::Application.routes.draw do
+  mount ForemanAgentMonitoring::Engine, at: '/foreman_agent_monitoring'
 end
