@@ -30,7 +30,7 @@ module ForemanAgentMonitoring
         end
 
         # Add a new role called 'ForemanAgentMonitoring' if it doesn't exist
-        role 'ForemanAgentMonitoring', [:view_foreman_agent_monitoring]
+        role 'ForemanAgentMonitoring', [:view_agents]
 
         # Add menu entry
         sub_menu :top_menu, :hallas_automation, caption: N_('Hallas Automation'), icon: 'pficon pficon-enterprise', after: :hosts_menu do
