@@ -2,7 +2,7 @@
 ForemanAgentMonitoring::Engine.routes.draw do
   resources :agents do
     get :auto_complete_search, on: :collection
-    get 'welcome', to: '/react#index', as: 'welcome'
+    get 'index', to: 'agent#index'
   end
 end
 
