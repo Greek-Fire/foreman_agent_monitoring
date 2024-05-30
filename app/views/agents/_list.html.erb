@@ -3,8 +3,8 @@
     <tr>
       <th><%= sort :Network,  :as => s_('Network') %></th>
       <th><%= sort :Status,   :as => s_('Status') %></th>
-      <th><%= sort 'Agent',   :as => s_('Agent') %></th>
-      <th><%= sort 'Host',    :as => s_('Host') %></th>
+      <th><%= sort :Agent,   :as => s_('Agent') %></th>
+      <th><%= sort :Host,    :as => s_('Host') %></th>
     </tr>
   </thead>
   <tbody>
@@ -18,4 +18,3 @@
     <% end %>
   </tbody>
 </table>
-<%= will_paginate_with_info @agents %>
