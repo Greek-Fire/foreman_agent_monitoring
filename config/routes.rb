@@ -1,9 +1,6 @@
-ForemanAgentMonitoring::Engine.routes.draw do
-  get 'new_action', to: 'agents#new_action', as: 'new_action'
-  get 'plugin_template_description', to: 'agents#react_template_page_description'
-  get 'welcome', to: 'react#index', as: 'welcome'
-end
-
-Foreman::Application.routes.draw do
-  mount ForemanAgentMonitoring::Engine, at: '/foreman_agent_monitoring'
+Rails.application.routes.draw do
+  resources :agens do
+    get :results, on: :collection
+    get :auto_complete_search, on: :collection
+  end
 end
