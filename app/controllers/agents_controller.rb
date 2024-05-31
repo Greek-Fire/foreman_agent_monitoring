@@ -5,3 +5,4 @@ class AgentsController < ApplicationController
   def index
     @agents = resource_base_search_and_page
   end
+end
