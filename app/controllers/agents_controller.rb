@@ -1,4 +1,4 @@
-class AgentsController < ApplicationController
+class AgentsController < ::ApplicationController
   include Foreman::Controller::AutoCompleteSearch
   include Foreman::Controller::Parameters::Agent
   
