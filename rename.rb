@@ -37,19 +37,19 @@ Find.find('.') do |path|
 
   # Change content on all files
   tmp_file = "#{path}.tmp"
-  system(%(sed 's/foreman_plugin_template/#{snake}/g' #{path} > #{tmp_file}))
-  system(%(sed 's/ForemanPluginTemplate/#{camel}/g' #{tmp_file} > #{path}))
+  system(%(sed 's/foreman_agent_monitoring/#{snake}/g' #{path} > #{tmp_file}))
+  system(%(sed 's/ForemanAgentMonitoring/#{camel}/g' #{tmp_file} > #{path}))
   system(%(sed 's/foremanPluginTemplate/#{camel_lower}/g' #{tmp_file} > #{path}))
   system(%(rm #{tmp_file}))
 end
 
 Find.find('.') do |path|
   # Change all the paths to the new snake_case name
-  if path =~ /foreman_plugin_template/i
-    new = path.gsub('foreman_plugin_template', snake)
+  if path =~ /foreman_agent_monitoring/i
+    new = path.gsub('foreman_agent_monitoring', snake)
     # Recursively copy the directory and store the original for deletion
     # Check for $ because we don't need to copy template/hosts for example
-    if File.directory?(path) && path =~ /foreman_plugin_template$/i
+    if File.directory?(path) && path =~ /foreman_agent_monitoring$/i
       FileUtils.cp_r(path, new)
       old_dirs << path
     else

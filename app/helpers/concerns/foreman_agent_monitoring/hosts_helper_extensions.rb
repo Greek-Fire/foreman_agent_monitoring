@@ -1,4 +1,4 @@
-module ForemanPluginTemplate
+module ForemanAgentMonitoring
   module HostsHelperExtensions
     extend ActiveSupport::Concern
 

@@ -1,4 +1,4 @@
-# ForemanPluginTemplate
+# ForemanAgentMonitoring
 
 *Introdction here*
 
