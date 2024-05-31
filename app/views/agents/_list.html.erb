@@ -1,10 +1,10 @@
 <table class="<%= table_css_classes %>">
   <thead>
     <tr>
-      <th><%= sort :Host,  as: s_('Host') %></th>
-      <th><%= sort :Status,   as: s_('Status') %></th>
-      <th><%= sort :Agent,    as: s_('Agent') %></th>
-      <th><%= sort :Network,     as: s_('Network') %></th>
+      <th><%= sort :Host, as: s_('Host') %></th>
+      <th><%= sort :Status, as: s_('Status') %></th>
+      <th><%= sort :Agent, as: s_('Agent') %></th>
+      <th><%= sort :Network, as: s_('Network') %></th>
     </tr>
   </thead>
   <tbody>
@@ -13,7 +13,7 @@
       <td><%= agent.host %></td>
       <td><%= agent.status %></td>
       <td><%= agent.agent %></td>
-      <td><%= agent.network %></td>
+      <td><%= agent.network ? 'Up' : 'Down' %></td>
     </tr>
     <% end %>
   </tbody>
