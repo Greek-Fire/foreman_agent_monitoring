@@ -1,19 +1,19 @@
 <table class="<%= table_css_classes %>">
   <thead>
     <tr>
-      <th><%= sort :Network,  as: s_('Network') %></th>
+      <th><%= sort :Host,  as: s_('Host') %></th>
       <th><%= sort :Status,   as: s_('Status') %></th>
       <th><%= sort :Agent,    as: s_('Agent') %></th>
-      <th><%= sort :Host,     as: s_('Host') %></th>
+      <th><%= sort :Network,     as: s_('Network') %></th>
     </tr>
   </thead>
   <tbody>
     <% @agents.each do |agent| %>
     <tr>
-      <td><%= agent.network %></td>
+      <td><%= agent.host %></td>
       <td><%= agent.status %></td>
       <td><%= agent.agent %></td>
-      <td><%= agent.host %></td>
+      <td><%= agent.network %></td>
     </tr>
     <% end %>
   </tbody>
